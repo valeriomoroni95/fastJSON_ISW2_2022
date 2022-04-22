@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="fastJSON_ISW2.AppTest" time="0.055" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="fastJSON_ISW2.AppTest" time="0.059" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="13"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
-    <property name="java.class.path" value="/Users/Valerio/eclipse-workspace/fastJSON_ISW2_2022/fastJSON_ISW2/target/test-classes:/Users/Valerio/eclipse-workspace/fastJSON_ISW2_2022/fastJSON_ISW2/target/classes:/Users/Valerio/.m2/repository/junit/junit/4.11/junit-4.11.jar:/Users/Valerio/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
+    <property name="java.class.path" value="/Users/Valerio/eclipse-workspace/fastJSON_ISW2_2022/target/test-classes:/Users/Valerio/eclipse-workspace/fastJSON_ISW2_2022/target/classes:/Users/Valerio/.m2/repository/junit/junit/4.11/junit-4.11.jar:/Users/Valerio/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.vendor.url" value="https://java.oracle.com/"/>
@@ -12,9 +12,9 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="IT"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/openjdk-13.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/Valerio/eclipse-workspace/fastJSON_ISW2_2022/fastJSON_ISW2/target/surefire/surefirebooter9953469977233202268.jar /Users/Valerio/eclipse-workspace/fastJSON_ISW2_2022/fastJSON_ISW2/target/surefire 2022-04-21T10-26-53_841-jvmRun1 surefire15839038458543998465tmp surefire_014039088828990127499tmp"/>
+    <property name="sun.java.command" value="/Users/Valerio/eclipse-workspace/fastJSON_ISW2_2022/target/surefire/surefirebooter17390296613257838209.jar /Users/Valerio/eclipse-workspace/fastJSON_ISW2_2022/target/surefire 2022-04-21T10-39-35_829-jvmRun1 surefire4191224030707366778tmp surefire_018250020756592636882tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="/Users/Valerio/eclipse-workspace/fastJSON_ISW2_2022/fastJSON_ISW2/target/test-classes:/Users/Valerio/eclipse-workspace/fastJSON_ISW2_2022/fastJSON_ISW2/target/classes:/Users/Valerio/.m2/repository/junit/junit/4.11/junit-4.11.jar:/Users/Valerio/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
+    <property name="surefire.test.class.path" value="/Users/Valerio/eclipse-workspace/fastJSON_ISW2_2022/target/test-classes:/Users/Valerio/eclipse-workspace/fastJSON_ISW2_2022/target/classes:/Users/Valerio/.m2/repository/junit/junit/4.11/junit-4.11.jar:/Users/Valerio/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="/Users/Valerio"/>
     <property name="user.language" value="it"/>
@@ -22,12 +22,12 @@
     <property name="java.version.date" value="2019-09-17"/>
     <property name="java.home" value="/Library/Java/JavaVirtualMachines/openjdk-13.jdk/Contents/Home"/>
     <property name="file.separator" value="/"/>
-    <property name="basedir" value="/Users/Valerio/eclipse-workspace/fastJSON_ISW2_2022/fastJSON_ISW2"/>
+    <property name="basedir" value="/Users/Valerio/eclipse-workspace/fastJSON_ISW2_2022"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="/Users/Valerio/eclipse-workspace/fastJSON_ISW2_2022/fastJSON_ISW2/target/surefire/surefirebooter9953469977233202268.jar"/>
+    <property name="surefire.real.class.path" value="/Users/Valerio/eclipse-workspace/fastJSON_ISW2_2022/target/surefire/surefirebooter17390296613257838209.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="13+33"/>
     <property name="user.name" value="Valerio"/>
@@ -40,7 +40,7 @@
     <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
     <property name="java.io.tmpdir" value="/var/folders/93/ggtqcq112x9bxbzdb8560fh40000gn/T/"/>
     <property name="java.version" value="13"/>
-    <property name="user.dir" value="/Users/Valerio/eclipse-workspace/fastJSON_ISW2_2022/fastJSON_ISW2"/>
+    <property name="user.dir" value="/Users/Valerio/eclipse-workspace/fastJSON_ISW2_2022"/>
     <property name="os.arch" value="x86_64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="java.library.path" value="/Users/Valerio/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
@@ -50,5 +50,5 @@
     <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
     <property name="java.class.version" value="57.0"/>
   </properties>
-  <testcase name="shouldAnswerWithTrue" classname="fastJSON_ISW2.AppTest" time="0.001"/>
+  <testcase name="shouldAnswerWithTrue" classname="fastJSON_ISW2.AppTest" time="0.003"/>
 </testsuite>
