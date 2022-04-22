@@ -25,7 +25,7 @@ public class SerializeWriterTest{
 	private long param9;
 	private String param10;
 	
-	/* Array of tests */
+	
     @Parameterized.Parameters
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][]{
@@ -61,10 +61,8 @@ public class SerializeWriterTest{
     	SerializeWriter writer = configureWriter();
     	writer.append(param1);
     	writer.writeInt(param2);
-    	System.out.println(param3+ " and the other one is "+ writer.toString());
     	Assert.assertEquals(param3, writer.toString());
     	writer.writeLong(param4);
-    	System.out.println(param5+ " and the other one is "+ writer.toString());
     	Assert.assertEquals(param5, writer.toString());
     	
     }
@@ -73,7 +71,6 @@ public class SerializeWriterTest{
     public void test_1() {
     	SerializeWriter writer = configureWriter();
 		writer.writeInt(param6);
-		System.out.println(param7+ " and the other one is "+ writer.toString());
 		Assert.assertEquals(param7, writer.toString());
     }
     
@@ -82,7 +79,6 @@ public class SerializeWriterTest{
     	SerializeWriter writer = configureWriter();
 		writer.writeInt(param6);
 		writer.write(param8);
-		System.out.println(param10+ " and the other one is "+ writer.toString());
 		Assert.assertEquals(param10, writer.toString());
     }
     
@@ -90,7 +86,6 @@ public class SerializeWriterTest{
     public void test_5() {
     	SerializeWriter writer = configureWriter();
 		writer.writeLong(param9);
-		System.out.println(param7+ " and the other one is "+ writer.toString());
 		Assert.assertEquals(param7, writer.toString());
     }
     
@@ -99,7 +94,6 @@ public class SerializeWriterTest{
     	SerializeWriter writer = configureWriter();
 		writer.writeLong(param9);
 		writer.write(param8);
-		System.out.println(param10+ " and the other one is "+ writer.toString());
 		Assert.assertEquals(param10, writer.toString());
     }
 	
