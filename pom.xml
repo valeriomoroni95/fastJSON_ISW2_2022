@@ -14,8 +14,12 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
+    
+	  <!-- Sonar configuration-->
     <sonar.organization>valeriomoroni95</sonar.organization>
     <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+    <sonar.junit.reportPaths>target/coverage-reports/surefire-reports/*.xml</sonar.junit.reportPaths>
+    <sonar.coverage.jacoco.xmlReportPaths>target/coverage-reports/jacoco-reports/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
   </properties>
 
   <dependencies>
@@ -44,6 +48,28 @@
         <plugin>
           <artifactId>maven-resources-plugin</artifactId>
           <version>3.0.2</version>
+          <executions>
+            <execution>
+                <id>
+                    instrumentation
+                </id>
+                <goals>
+                    <goal>
+                        testResources
+                    </goal>
+                </goals>
+                <configuration>
+                    <resources>
+                        <resource>
+                            <directory>lib</directory>
+                        </resource>
+                    </resources>
+                    <outputDirectory>
+                        target/classes
+                    </outputDirectory>
+                </configuration>
+            </execution>
+          </executions>
         </plugin>
         <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
@@ -52,6 +78,45 @@
         <plugin>
           <artifactId>maven-surefire-plugin</artifactId>
           <version>2.22.1</version>
+          <configuration>
+                <argLine>
+                    -javaagent:jars/jacoco/jacocoagent.jar=destfile=target/coverage-reports/jacoco.exec
+                </argLine>
+                <reportsDirectory>
+                    target/coverage-reports/surefire-reports
+                </reportsDirectory>
+          </configuration>
+        </plugin>
+         <plugin>
+            <groupId>org.jacoco</groupId>
+            <artifactId>jacoco-maven-plugin</artifactId>
+            <version>0.8.7</version>
+            <executions>
+                <execution>
+                    <id>
+                        prepare-agent
+                    </id>
+                    <goals>
+                        <goal>
+                            prepare-agent
+                        </goal>
+                    </goals>
+                    </execution>
+                    <execution>
+                        <id>
+                            report
+                        </id>
+                        <goals>
+                            <goal>report-aggregate</goal>
+                        </goals>
+                        <phase>verify</phase>
+                        <configuration>
+                            <outputDirectory>
+                                target/coverage-reports/jacoco-reports
+                            </outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
         </plugin>
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
