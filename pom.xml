@@ -61,7 +61,7 @@
                 <configuration>
                     <resources>
                         <resource>
-                            <directory>jars</directory>
+                            <directory>jars/fastjson-1.2.79-fat.jar</directory>
                         </resource>
                     </resources>
                     <outputDirectory>
