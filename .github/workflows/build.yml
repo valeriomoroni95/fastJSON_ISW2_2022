@@ -22,5 +22,17 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         cache: maven
+    - name: Cache SonarCloud packages
+      uses: actions/cache@v1
+      with:
+        path: ~/.sonar/cache
+        key: ${{ runner.os }}-sonar
+        restore-keys: ${{ runner.os }}-sonar
+    - name: Cache Maven packages
+      uses: actions/cache@v1
+      with:
+        path: ~/.m2
+        key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+        restore-keys: ${{ runner.os }}-m2
     - name: Build with Maven
-      run: mvn -B package --file pom.xml
+      run: mvn clean verify sonar:sonar org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=valeriomoroni95_fastJSON_ISW2_2022 -Dsonar.coverage.jacoco.xmlReportPaths=target/coverage-reports/jacoco-reports/jacoco.xml
