@@ -18,16 +18,38 @@
 	  <!-- Sonar configuration-->
     <sonar.organization>valeriomoroni95</sonar.organization>
     <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-    <sonar.junit.reportPaths>target/coverage-reports/surefire-reports/*.xml</sonar.junit.reportPaths>
-    <sonar.coverage.jacoco.xmlReportPaths>target/coverage-reports/jacoco-reports/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
+    <!--<sonar.junit.reportPaths>target/coverage-reports/surefire-reports/*.xml</sonar.junit.reportPaths>
+    <sonar.coverage.jacoco.xmlReportPaths>target/coverage-reports/jacoco-reports/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>-->
   </properties>
-
+<profile>
+	<id>coverageProfile</id>
+	<activation>
+		<activeByDefault>false</activeByDefault>
+	</activation>
   <dependencies>
     <dependency>
 	    <groupId>com.alibaba</groupId>
 	    <artifactId>fastjson</artifactId>
 	    <version>1.2.79</version>
-	  </dependency>
+        <scope>system</scope>
+		<systemPath>jars/fastjson-1.2.79-fat.jar</systemPath>
+	</dependency>
+    <dependency>
+		<groupId>commons-logging</groupId>
+		<artifactId>commons-logging</artifactId>
+		<version>1.1</version>
+	</dependency>
+    <dependency>
+		<groupId>concurrent</groupId>
+		<artifactId>concurrent</artifactId>
+		<version>1.0</version>
+	</dependency>
+    <dependency>
+		<groupId>org.jacoco</groupId>
+		<artifactId>org.jacoco.agent</artifactId>
+		<classifier>runtime</classifier>
+		<version>0.8.5</version>
+	</dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -41,6 +63,21 @@
       <plugins>
         <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
         <plugin>
+			<groupId>org.jacoco</groupId>
+			<artifactId>jacoco-maven-plugin</artifactId>
+			<version>0.8.5</version>
+					<executions>
+						<execution>
+							<id>prepare-agent</id>
+							<goals>
+								<goal>prepare-agent</goal>
+							</goals>
+							<configuration>
+                            </configuration>
+						</execution>
+					</executions>
+				</plugin>
+        <plugin>
           <artifactId>maven-clean-plugin</artifactId>
           <version>3.1.0</version>
         </plugin>
@@ -48,75 +85,27 @@
         <plugin>
           <artifactId>maven-resources-plugin</artifactId>
           <version>3.0.2</version>
-          <executions>
-            <execution>
-                <id>
-                    instrumentation
-                </id>
-                <goals>
-                    <goal>
-                        testResources
-                    </goal>
-                </goals>
-                <configuration>
-                    <resources>
-                        <resource>
-                            <directory>jars</directory>
-                        </resource>
-                    </resources>
-                    <outputDirectory>
-                        target/classes
-                    </outputDirectory>
-                </configuration>
-            </execution>
-          </executions>
         </plugin>
         <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.8.0</version>
         </plugin>
         <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-surefire-plugin</artifactId>
           <version>2.22.1</version>
-          <configuration>
-                <argLine>
-                    -javaagent:jars/jacocoagent.jar=destfile=target/coverage-reports/jacoco.exec
-                </argLine>
-                <reportsDirectory>
-                    target/coverage-reports/surefire-reports
-                </reportsDirectory>
-          </configuration>
-        </plugin>
-         <plugin>
-            <groupId>org.jacoco</groupId>
-            <artifactId>jacoco-maven-plugin</artifactId>
-            <version>0.8.7</version>
-            <executions>
-                <execution>
-                    <id>
-                        prepare-agent
-                    </id>
-                    <goals>
-                        <goal>
-                            prepare-agent
-                        </goal>
-                    </goals>
-                    </execution>
-                    <execution>
-                        <id>
-                            report
-                        </id>
-                        <goals>
-                            <goal>report-aggregate</goal>
-                        </goals>
-                        <phase>verify</phase>
-                        <configuration>
-                            <outputDirectory>
-                                target/coverage-reports/jacoco-reports
-                            </outputDirectory>
-                        </configuration>
-                    </execution>
-                </executions>
+          <executions>
+			<execution>
+				<id>TheExecutionId-Surefire</id>
+				<goals>
+					<goal>test</goal>
+				</goals>
+			</execution>
+		   </executions>
+			<configuration>
+				<reuseForks>false</reuseForks>
+				<useUnlimitedThreads>true</useUnlimitedThreads>
+            </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
@@ -142,4 +131,6 @@
       </plugins>
     </pluginManagement>
   </build>
+</profile>
+
 </project>
