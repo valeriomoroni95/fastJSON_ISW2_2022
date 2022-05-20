@@ -22,11 +22,11 @@
     <sonar.coverage.jacoco.xmlReportPaths>target/coverage-reports/jacoco-reports/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>-->
   </properties>
 
-  <profiles>
+<profiles>
     <profile>
 	    <id>coverageProfile</id>
 	    <activation>
-		        <activeByDefault>false</activeByDefault>
+		    <activeByDefault>false</activeByDefault>
 	    </activation>
         <dependencies>
             <dependency>
@@ -51,7 +51,7 @@
         </dependencies>
 
         <build>
-            <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+            <pluginManagement>
                 <plugins>
                     <plugin>
                         <groupId>org.jacoco</groupId>
