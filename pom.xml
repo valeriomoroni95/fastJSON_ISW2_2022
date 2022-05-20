@@ -14,6 +14,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
+    <fastjson.fatjar>jars/fastjson-1.2.79-fat.jar</fastjson.fatjar>
     
 	  <!-- Sonar configuration-->
     <sonar.organization>valeriomoroni95</sonar.organization>
@@ -34,7 +35,7 @@
                     <artifactId>fastjson</artifactId>
                     <version>1.2.79</version>
                     <scope>system</scope>
-                    <systemPath>jars/fastjson-1.2.79-fat.jar</systemPath>
+                    <systemPath>${fastjson.fatjar}</systemPath>
                 </dependency>
                 <dependency>
                     <groupId>org.jacoco</groupId>
@@ -61,7 +62,7 @@
                                 <execution>
                                     <id>prepare-agent</id>
                                     <goals>
-                                    <goal>prepare-agent</goal>
+                                        <goal>prepare-agent</goal>
                                     </goals>
                                 </execution>
                             </executions>
