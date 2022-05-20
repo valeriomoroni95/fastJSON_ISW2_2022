@@ -48,7 +48,7 @@
                     <artifactId>fastjson</artifactId>
                     <version>1.2.79</version>
                     <scope>system</scope>
-                    <systemPath>${fastjson.fatjar}</systemPath>
+                    <systemPath>/Users/Valerio/eclipse-workspace/fastJSON_ISW2_2022/${fastjson.fatjar}</systemPath>
                 </dependency>
                 <dependency>
                     <groupId>org.jacoco</groupId>
