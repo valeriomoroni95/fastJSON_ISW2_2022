@@ -4,11 +4,8 @@ import java.util.Arrays;
 import java.util.Collection;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import com.alibaba.fastjson.JSON;
-import junit.framework.TestCase;
 import org.junit.Test;
 import org.junit.Assert;
-
 import com.alibaba.fastjson.serializer.SerializeWriter;
 
 @RunWith(Parameterized.class)

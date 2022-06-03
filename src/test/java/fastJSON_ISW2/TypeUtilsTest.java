@@ -207,7 +207,7 @@ public TypeUtilsTest(testTypes type, Object param1, Object param2, Object param3
 	if(type==testTypes.test_2 || type == testTypes.test_3) {
 		configureTest2_3(param1, param2, param3);
 	}
-	if(type == testTypes.test_cast_Integer || type == testTypes.test_cast_Integer_2 || type == testTypes.test_cast_to_long
+	else if(type == testTypes.test_cast_Integer || type == testTypes.test_cast_Integer_2 || type == testTypes.test_cast_to_long
 	|| type == testTypes.test_cast_to_Long || type == testTypes.test_cast_to_short || type == testTypes.test_cast_to_Short
 	|| type == testTypes.test_cast_to_byte || type == testTypes.test_cast_to_Byte || type == testTypes.test_cast_to_BigInteger
 	|| type == testTypes.test_cast_to_BigDecimal || type == testTypes.test_cast_to_boolean || type == testTypes.test_cast_to_Boolean
@@ -219,22 +219,22 @@ public TypeUtilsTest(testTypes type, Object param1, Object param2, Object param3
 	|| type == testTypes.test_cast_ab_1) {
 		configureTestCastTypes(param1, param2, param3, param4);
 	}
-	if(type == testTypes.test_cast_to_SqlDate_calendar || type == testTypes.test_cast_to_Timestamp_calendar) {
+	else if(type == testTypes.test_cast_to_SqlDate_calendar || type == testTypes.test_cast_to_Timestamp_calendar) {
 		configureTestCastCalendar(param1, param2, param3, param4);
 	}
-	if(type == testTypes.test_cast_to_SqlDate_error || type == testTypes.test_cast_to_Timestamp_not_error || type == testTypes.test_cast_ab_error) {
+	else if(type == testTypes.test_cast_to_SqlDate_error || type == testTypes.test_cast_to_Timestamp_not_error || type == testTypes.test_cast_ab_error) {
 		configureTestCastError(param1, param2, param3, param4);
 	}
-	if(type == testTypes.test_cast_to_Timestamp_1970_01_01_00_00_00) {
+	else if(type == testTypes.test_cast_to_Timestamp_1970_01_01_00_00_00) {
 		configureTestTimezone(param1,param2,param3);
 	}
-	if(type == testTypes.test_error) {
+	else if(type == testTypes.test_error) {
 		configureTestError(param1,param2,param3,param4);
 	}
-	if(type == testTypes.test_error_2) {
+	else if(type == testTypes.test_error_2) {
 		configureTestError2(param1, param2, param3, param4);
 	}
-	if(type == testTypes.test_cast_Array){
+	else if(type == testTypes.test_cast_Array){
 		this.param1 = param1;
         this.param2 = param2;
         this.param3 = param3;
